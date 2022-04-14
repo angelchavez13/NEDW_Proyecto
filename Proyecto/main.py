@@ -1,3 +1,4 @@
+# -*- coding: cp1252 -*-
 """
 Proyecto. Examenes de opciÃ³n multiple
 """
@@ -10,10 +11,10 @@ class principal:
         asignatura = ''
         numero = ''
         salida = 0
-        print('\t\t\tElaborador de exámenes.')
+        print('\t\t\tElaborador de exï¿½menes.')
         while(salida == 0):
             print('\t\t\t\nMenu\n1. Crear examen\n2. Realizar examen\n3. Salir\n')
-            opcion = int(input('Selecciona una opción: '))
+            opcion = int(input('Selecciona una opciï¿½n: '))
             
             if(opcion == 1):
                 nombre = input('Nombre del examen: ')
@@ -27,7 +28,7 @@ class principal:
             elif(opcion == 3):
                 salida = 1
             else:
-                print('\nOpción no valida\n')
+                print('\nOpciï¿½n no valida\n')
         print('\nSaliendo del programa')
 
 prin = principal()

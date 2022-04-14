@@ -1,8 +1,5 @@
 """
-Se utiliza la siguiente libreria para poder leer texto de un PDF.
-https://github.com/jsvine/pdfplumber
-
-Libreria para leer texto de una imagen: pip install pytesseract
+Proyecto. Examenes de opción multiple
 """
 
 import examen as ex

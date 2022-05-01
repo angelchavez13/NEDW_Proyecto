@@ -2,6 +2,7 @@
 El programa mostrará el examen de opción multiple
 """
 import time
+import random
 
 class examen:    
     def opcionMultiple(self,nombre,asignatura,numero):
@@ -46,6 +47,7 @@ class examen:
             indice2 = 0
             if(len(preguntas) == indice1):
                 finalizado1=1
+        examen().retroalimentacion()
         return respuestas,tiempo
         #examenFinal.close() 
         
@@ -55,6 +57,20 @@ class examen:
     pregunta
     """
     def solucion(self,respuestas,tiempo):
+        contador1 = 0
+        contador2 = 0
         print('\nEl resultado del examen es el siguiente: \n')
         for i in range(len(respuestas)):
             print(respuestas[i]+'. Tiempo: '+tiempo[i]+' segundos\n')
+            if(respuestas[i].__contains__('Respuesta correcta') is True):
+                contador1+=1
+            else:
+                contador2+=1
+        print('\n\n\t\tTotal buenas: '+str(contador1)+'\t\tTotal incorrectas: '+str(contador2))
+    
+    """Ofrece una pequeña retroalimentacion al terminar el examen"""
+    def retroalimentacion(self):
+        finalExamen=['Mucho exito','Todo saldra bien',
+                     'Tomate un descanso después del examen','Escucha la musica que te gusta']
+        retro = random.randint(0, len(finalExamen)-1)
+        print(finalExamen[retro])

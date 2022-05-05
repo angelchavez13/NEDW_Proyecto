@@ -3,23 +3,33 @@ El programa mostrará el examen de opción multiple
 """
 import time
 import random
+import os
+import json
 
 class examen:    
-    def opcionMultiple(self,nombre,asignatura,numero):
+    def opcionMultiple(self):
         respuestas = []
         tiempo = []
-        finalizado1 = 0
-        finalizado2 = 0
-        indice1 = 0
-        indice2 = 0
+        finalizado1,finalizado2,indice1,indice2 = 0
+        contador = 1
         salida = ''
-        preguntas = [['Pregunta de prueba','1.XD','2.OLV','3.SUS',3],
-                     ['Pregunta de prueba 2','1.Tilin','2.Ete sech','3.SUS',1]]
-        #examenFinal = open("Transacciones.txt","a")
-        print('\nNombre del examen: '+nombre)
-        print('\nAsignatura: '+asignatura)
-        print('\nNumero total de preguntas: '+str(numero))
+        nombre = ''
+        for examen in os.listdir():
+            if examen.endswith(".json"):
+                if(examen == 'Prueba.json'):
+                    nombre = examen
+        file = open(nombre)
+        data =json.load(file)
+        preguntas = []
+        print('\nNombre del examen: '+data['Info']['Examen'])
+        print('\nAsignatura: '+data['Info']['Asignatura'])
+        #print('\nNumero total de preguntas: '+str(numero))
         print('\n\nExamen de opción multiple')
+        
+        while(contador < len(data.items())):
+            preguntas.append(data['Pregunta '+str(contador)])
+            contador+=1
+        
         while(finalizado1 == 0 or indice1 == 15):
             print('\n'+preguntas[indice1][indice2])
             """El ciclo va a servir para desplegar todas las preguntas y,
@@ -47,9 +57,10 @@ class examen:
             indice2 = 0
             if(len(preguntas) == indice1):
                 finalizado1=1
-        examen().retroalimentacion()
+        #examen().retroalimentacion()
+        file.close()
         return respuestas,tiempo
-        #examenFinal.close() 
+    
         
     """
     La funcion solucion va a mostrar el resultado que obtuvo el alumno en el examen,

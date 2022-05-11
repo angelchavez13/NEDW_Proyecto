@@ -10,7 +10,10 @@ class examen:
     def opcionMultiple(self):
         respuestas = []
         tiempo = []
-        finalizado1,finalizado2,indice1,indice2 = 0
+        finalizado1=0
+        finalizado2=0
+        indice1=0
+        indice2 = 0
         contador = 1
         salida = ''
         nombre = ''

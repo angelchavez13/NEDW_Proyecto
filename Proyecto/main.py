@@ -1,4 +1,5 @@
 # -*- coding: cp1252 -*-
+# encoding: utf-8
 """
 Proyecto. Examenes de opcion multiple
 """
@@ -12,7 +13,8 @@ test = 0
 class principal:  
     
     def main(self):
-        seleccion,salida = 0
+        seleccion = 0
+        salida = 0
         print('\t\t\tElaborador de examenes.')
         while(salida == 0):
             print('\t\t\t\t\tMenu\n1. Docente\n2. Estudiante\n3. Salida')
@@ -40,7 +42,7 @@ class principal:
             opcion = int(input('Selecciona una opcion: '))
             
             if(opcion == 1):
-                #cr.creador().crearExamen()
+                cr.creador().crearExamen()
                 print('\nAplicar test de estres a los alumnos\n1. Si\n2. No')
                 prueba = int(input(''))
                 if(prueba == 1):
@@ -50,7 +52,7 @@ class principal:
             #mostrara un mensaje al usuario diciendole esto. Además, se va a mostrar
             #que se tomo para realizar el examen; el resultado estara en segundos.
                 if(nombre == '' or asignatura == '' or numero == ''):
-                    print('\nPrimero debes de crear un examen para poder acceder\n')
+                    print('\nPrimero d4ebes de crear un examen para poder acceder\n')
                 else:
                     inicio=time.time()
                     respuestas,tiempo = ex.examen().opcionMultiple(nombre,asignatura,numero)
@@ -73,6 +75,7 @@ class principal:
     el estudiante el examen y el resultado"""
     def estudiante(self):
         respuestas = []
+        tiempo = []
         salida = 0
         while(salida == 0):
             print('\n\t\t\tMenu del estudiante\n1. Realizar examen\n2. Resultados\n3. Regresar\n')
@@ -94,6 +97,7 @@ class principal:
             else:
                 print('\nOpcion no valida\n')
         print('\nRegresando al menu principal\n')
+
 
 prin = principal()
 prin.main()

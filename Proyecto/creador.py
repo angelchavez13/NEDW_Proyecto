@@ -17,13 +17,8 @@ class creador:
         preguntasFinales = {}
         pregunta = []
         informacion = {}
-<<<<<<< HEAD
         salida = 0
         indice = 0
-=======
-        salida=0
-        indice=0 
->>>>>>> 80370c1076fcfeb72719468b0f4b373ca1e02d27
         inciso = 0
         print('\nEl programa tiene como objetivo crear examenes. ')
         print('\nSin embargo, lo importante es ofrecerle al estudiante retroalimenación cuando se equivoque en alguna pregunta')
@@ -37,11 +32,7 @@ class creador:
             indice += 1
             pregunta.append(input('Pregunta: '))
             while(inciso < 3):
-<<<<<<< HEAD
                 pregunta.append(input('Inciso: '))
-=======
-                pregunta.append(input("Inciso: "))
->>>>>>> 80370c1076fcfeb72719468b0f4b373ca1e02d27
                 if(inciso == 2):
                     pregunta.append(int(input('Respuesta correcta (1,2,3): ')))
                 inciso +=1
@@ -72,13 +63,8 @@ class creador:
     """
     def testEstres(self):
         preguntas = []
-<<<<<<< HEAD
         finalizado1 = 0
         final = 0
-=======
-        finalizado1=0
-        final=0
->>>>>>> 80370c1076fcfeb72719468b0f4b373ca1e02d27
         indice1 = 0
         contador = 1
         nombre = ''

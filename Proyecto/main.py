@@ -9,17 +9,15 @@ Proyecto Final. Elaborador de examenes.
 Integrantes del equipo:
     -Chavez Garcia Jesus Angel
     -Cruz Plata Eduargo
+    
+Proyecto. Examenes de opcion multiple
 """
 
 import examen as ex
 import creador as cr
 import time
 import os
-<<<<<<< HEAD
-=======
 import json
-
->>>>>>> e2dde85b89d85f5efb918dc430415c4b895123b2
 
 test = 0
 
@@ -54,17 +52,16 @@ class principal:
     def docente(self):
         global test
         respuestas = []
+        tiempo = []
         nombre = ''
+        asignatura = ''
+        numero = ''
         salida = 0
         #Se repite el ciclo si es que no se selecciona la opción de regresar
         
         while(salida == 0):
-<<<<<<< HEAD
             os.system("cls")
-            print('\n\t\t\tMenu del docente\n1. Crear examen\n2. Realizar examen\n3. Resultados\n4. Regresar\n')
-=======
             print('\n\t\t\tMenu del docente\n1. Crear examen\n2. Resultados\n3. Regresar\n')
->>>>>>> e2dde85b89d85f5efb918dc430415c4b895123b2
             opcion = int(input('Selecciona una opcion: '))
             
             #CREAR EXAMEN
@@ -75,13 +72,9 @@ class principal:
                 prueba = int(input(''))
                 if(prueba == 1):
                     test = 1
-<<<<<<< HEAD
-
-
-=======
                     print('\nSe aplicara el test seleccionado\n')
+
             elif(opcion == 2):
-<<<<<<< HEAD
                 """Se le mostrara al docente todas las personas que han realizado 
                 el examen así como los resultados"""
                 print('\nLas siguientes personas han respondido el examen:\n')
@@ -97,46 +90,9 @@ class principal:
                 file = open(respuestas[eleccion-1])
                 data =json.load(file)       
                 ex.examen().solucionDocente(data)
-=======
->>>>>>> e2dde85b89d85f5efb918dc430415c4b895123b2
-            #En esta opcion se debe de crear primero un examen, de lo contrario se
-            #mostrara un mensaje al usuario diciendole esto. Además, se va a mostrar
-            #que se tomo para realizar el examen; el resultado estara en segundos.
-            elif(opcion == 2):
-                #If para verificar si existe un examen
-                if(nombre == '' or asignatura == '' or numero == ''):
-                    print('\nPrimero debes de crear un examen para poder acceder\n')
-
-                #Si existe vamor a hacer el examen
-                else:
-                    inicio=time.time()
-                    #Se llamara a una función en Examen para resolver el examen
-                    respuestas,tiempo = ex.examen().opcionMultiple(nombre,asignatura,numero)
-                    fin=time.time()
-                    print('\nTiempo en que se resolvio el examen: '+str(int(fin-inicio))+' segundos')
-<<<<<<< HEAD
-
-
-            #Esta opcion va a mostrar el resultado del examen. En caso de que no se
-            #tenga ninguna respuesta se va a mandar un mensaje al usuario
-            elif(opcion == 3):
-                if(len(respuestas) == 0):
-                    os.system("cls")
-                    print('\nNo hay ninguna respuesta\n')
-                    input("")
-                    os.system("cls")
-                else:
-                    os.system("cls")
-                    ex.examen().solucion(respuestas,tiempo)
-                    input("")
-
-
+                
             #SALIDA
-            elif(opcion == 4):
-=======
->>>>>>> 80370c1076fcfeb72719468b0f4b373ca1e02d27
             elif(opcion == 3):
->>>>>>> e2dde85b89d85f5efb918dc430415c4b895123b2
                 salida = 1
             else:
                 os.system("cls")
@@ -147,28 +103,23 @@ class principal:
     """Hará casí lo mismo que la función del profesor, solo que será para 
     el estudiante el examen y el resultado"""
     def estudiante(self):
-<<<<<<< HEAD
         nombre = str(input('Nombre del estudiante: '))
         identificador = int(input('identificador: '))
-=======
         respuestas = []
         tiempo = []
->>>>>>> 80370c1076fcfeb72719468b0f4b373ca1e02d27
         salida = 0
-<<<<<<< HEAD
         #Seguirá mostrando el menú hasta presionar 3
-=======
-        
->>>>>>> e2dde85b89d85f5efb918dc430415c4b895123b2
         while(salida == 0):
             os.system("cls")
             print('\n\t\t\tMenu del estudiante\n1. Realizar examen\n2. Resultados\n3. Regresar\n')
             opcion = int(input('Selecciona una opcion: '))
+
             if(opcion == 1):
                 if(test == 1):
                     estres = cr.creador().testEstres()
                 else:
                     estres = 'No aplica'
+
                 inicio=time.time()
                 ex.examen().opcionMultiple(nombre,identificador,estres)
                 fin=time.time()

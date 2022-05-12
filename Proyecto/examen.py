@@ -7,21 +7,8 @@ import os
 import json
 
 class examen:    
-<<<<<<< HEAD
+    
     def opcionMultiple(self,nombreAlu,identificador,estres):
-        
-=======
-    def opcionMultiple(self):
-        respuestas = []
-        tiempo = []
-        finalizado1=0
-        finalizado2=0
-        indice1=0
-        indice2 = 0
-        contador = 1
-        salida = ''
-        nombre = ''
->>>>>>> 80370c1076fcfeb72719468b0f4b373ca1e02d27
         for examen in os.listdir():
                 if examen.endswith(".json"):
                     if(examen == 'Prueba.json'):

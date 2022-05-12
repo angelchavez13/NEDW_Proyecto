@@ -56,7 +56,6 @@ class principal:
                     test = 1
                     print('\nSe aplicara el test seleccionado\n')
             elif(opcion == 2):
-<<<<<<< HEAD
                 """Se le mostrara al docente todas las personas que han realizado 
                 el examen así como los resultados"""
                 print('\nLas siguientes personas han respondido el examen:\n')
@@ -72,18 +71,6 @@ class principal:
                 file = open(respuestas[eleccion-1])
                 data =json.load(file)       
                 ex.examen().solucionDocente(data)
-=======
-            #En esta opcion se debe de crear primero un examen, de lo contrario se
-            #mostrara un mensaje al usuario diciendole esto. Además, se va a mostrar
-            #que se tomo para realizar el examen; el resultado estara en segundos.
-                if(nombre == '' or asignatura == '' or numero == ''):
-                    print('\nPrimero d4ebes de crear un examen para poder acceder\n')
-                else:
-                    inicio=time.time()
-                    respuestas,tiempo = ex.examen().opcionMultiple(nombre,asignatura,numero)
-                    fin=time.time()
-                    print('\nTiempo en que se resolvio el examen: '+str(int(fin-inicio))+' segundos')
->>>>>>> 80370c1076fcfeb72719468b0f4b373ca1e02d27
             elif(opcion == 3):
                 salida = 1
             else:
@@ -93,13 +80,8 @@ class principal:
     """Hará casí lo mismo que la función del profesor, solo que será para 
     el estudiante el examen y el resultado"""
     def estudiante(self):
-<<<<<<< HEAD
         nombre = str(input('Nombre del estudiante: '))
         identificador = int(input('identificador: '))
-=======
-        respuestas = []
-        tiempo = []
->>>>>>> 80370c1076fcfeb72719468b0f4b373ca1e02d27
         salida = 0
         
         while(salida == 0):

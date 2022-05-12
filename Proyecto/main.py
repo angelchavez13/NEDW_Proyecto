@@ -30,6 +30,7 @@ class principal:
         print('\t\t\tElaborador de examenes.')
         #Menú para mostrar que es lo que se quiere hacer
         while(salida == 0):
+            os.system("cls")
             print('\t\t\t\t\tMenu\n1. Docente\n2. Estudiante\n3. Salida')
             seleccion = int(input('Selecciona una opcion: '))
 
@@ -43,8 +44,10 @@ class principal:
 
             #Salida
             elif(seleccion == 3):
+                os.system("cls")
                 print('\n\nSaliendo del programa\n\n')
                 salida = 1
+                time.sleep(1)
             else:
                 print('\n\nOpcion no valida\n\n')
 
@@ -86,10 +89,16 @@ class principal:
                         respuestas.append(nombre)
                         indice +=1
 
-                eleccion = int(input('Que archivo deseas abrir: '))
-                file = open(respuestas[eleccion-1])
-                data =json.load(file)       
-                ex.examen().solucionDocente(data)
+                if(len(respuestas)!=0):
+                    eleccion = int(input('Que archivo deseas abrir: '))
+                    file = open(respuestas[eleccion-1])
+                    data =json.load(file)       
+                    ex.examen().solucionDocente(data)
+                else:
+                    os.system("cls")
+                    print("\nNingun alumno a resuelto el examen")
+                    time.sleep(1)
+
                 
             #SALIDA
             elif(opcion == 3):

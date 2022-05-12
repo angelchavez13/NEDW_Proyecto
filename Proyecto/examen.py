@@ -23,6 +23,7 @@ class examen:
         
         if(nombre == 'Respuestas_'+data['Info']['Examen']+'_'+str(identificador)+'.json'):
             print('\nYa has respondido este examen\n')
+            input("")
         else:
             respuestasFinales = {}
             informacion = {}
@@ -115,6 +116,7 @@ class examen:
             else:
                 contador2+=1
         print('\n\n\t\tTotal correctas: '+str(contador1)+'\t\tTotal incorrectas: '+str(contador2))
+        input("")
     
     def solucionAlumno(self,data):
         contador1 = 0
@@ -128,6 +130,7 @@ class examen:
             else:
                 contador2+=1
         print('\n\n\t\tTotal correctas: '+str(contador1)+'\t\tTotal incorrectas: '+str(contador2))
+        input("")
 
     
     """Ofrece una pequeña retroalimentacion al terminar el examen"""
@@ -135,4 +138,5 @@ class examen:
         finalExamen=['Mucho exito','Todo saldra bien',
                      'Tomate un descanso después del examen','Escucha la musica que te gusta']
         retro = random.randint(0, len(finalExamen)-1)
-        print('\n'+finalExamen[retro]+'\n')
+        print(finalExamen[retro])
+        input("")

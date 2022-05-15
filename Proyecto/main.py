@@ -84,6 +84,7 @@ class principal:
                 file = open(respuestas[eleccion-1])
                 data =json.load(file)       
                 ex.examen().solucionDocente(data)
+                file.close()
             #SALIDA
             elif(opcion == 3):
                 salida = 1
@@ -111,9 +112,10 @@ class principal:
                 else:
                     estres = 'No aplica'
                 inicio=time.time()
-                ex.examen().opcionMultiple(nombre,identificador,estres)
+                bandera = ex.examen().opcionMultiple(nombre,identificador,estres)
                 fin=time.time()
-                print('\nTiempo en que se resolvio el examen: '+str(int(fin-inicio))+' segundos')
+                if(bandera != 0):
+                    print('\nTiempo en que se resolvio el examen: '+str(int(fin-inicio))+' segundos')
             elif(opcion == 2):
                 for examen in os.listdir():
                     if examen.__contains__(str(identificador)):
@@ -124,6 +126,7 @@ class principal:
                     file = open(nombreEx)
                     data =json.load(file)   
                     ex.examen().solucionAlumno(data)
+                    file.close()
             elif(opcion == 3):
                 salida = 1
             else:

@@ -91,7 +91,7 @@ class examen:
             with open('Respuestas_'+data['Info']['Examen']+'_'+str(identificador)+'.json', 'a') as outfile:
                 json.dump(respuestasFinales, outfile)
                     
-            examen().retroalimentacion()
+            #examen().retroalimentacion()
             file.close()
     
         

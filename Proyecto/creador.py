@@ -46,10 +46,8 @@ class creador:
                 salida = 1
                 print('\nHaz alcanzado el limite de las preguntas\n')
             inciso = 0
-        with open('Prueba.json', 'a') as outfile:
+        with open(informacion['Examen']+'.json', 'a') as outfile:
             json.dump(preguntasFinales, outfile)
-            
-        print(preguntasFinales)
     
     
     """

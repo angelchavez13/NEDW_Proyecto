@@ -99,6 +99,7 @@ class principal:
         nombre = str(input('Nombre del estudiante: '))
         identificador = int(input('identificador: '))
         salida = 0
+        nombreEx = ''
         #Seguira mostrando el menu hasta presionar 3
         while(salida == 0):
             os.system("cls")
@@ -116,10 +117,13 @@ class principal:
             elif(opcion == 2):
                 for examen in os.listdir():
                     if examen.__contains__(str(identificador)):
-                        nombre = examen
-                file = open(nombre)
-                data =json.load(file)   
-                ex.examen().solucionAlumno(data)
+                        nombreEx = examen
+                if(nombreEx == ''):
+                    print('\nNo hay ninguna respuesta\n')
+                else:
+                    file = open(nombreEx)
+                    data =json.load(file)   
+                    ex.examen().solucionAlumno(data)
             elif(opcion == 3):
                 salida = 1
             else:

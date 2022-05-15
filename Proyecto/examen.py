@@ -92,7 +92,7 @@ class examen:
             with open('Respuestas_'+data['Info']['Examen']+'_'+str(identificador)+'.json', 'a') as outfile:
                 json.dump(respuestasFinales, outfile)
                     
-            examen().retroalimentacion()
+            
             file.close()
     
         
@@ -135,8 +135,8 @@ class examen:
     
     """Ofrece una pequeña retroalimentacion al terminar el examen"""
     def retroalimentacion(self):
-        finalExamen=['Mucho exito','Todo saldra bien',
-                     'Tomate un descanso después del examen','Escucha la musica que te gusta']
+        finalExamen=["Mucho exito","Todo saldra bien",
+                     "Tomate un descanso después del examen","Escucha la musica que te gusta"]
         retro = random.randint(0, len(finalExamen)-1)
         print(finalExamen[retro])
         input("")

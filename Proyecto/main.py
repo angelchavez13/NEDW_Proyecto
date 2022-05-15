@@ -132,6 +132,7 @@ class principal:
                 inicio=time.time()
                 ex.examen().opcionMultiple(nombre,identificador,estres)
                 fin=time.time()
+                ex.examen().retroalimentacion()
                 print('\nTiempo en que se resolvio el examen: '+str(int(fin-inicio))+' segundos')
             elif(opcion == 2):
                 for examen in os.listdir():

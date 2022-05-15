@@ -96,7 +96,7 @@ class creador:
             print('\n'+str(indice1+1)+'. '+preguntas[indice1])
             """El ciclo va a servir para desplegar todas las preguntas y,
             a su vez, va a servir para poder elegir la opción correcta"""
-            respuesta=int(input('Seleccion: \n'))
+            respuesta=int(input('Del 1 al 10, siendo el 10 si es que te sientes muy identificado: \n'))
             final = final + respuesta
             indice1+=1
             if(len(preguntas) == indice1):
